@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig(({ mode }) => ({
-    base: mode === 'production' ? '/assets/' : '/',
+    base: mode === 'production' ? '/assets/dist' : '/',
     build: {
         rollupOptions: {
             input: {
