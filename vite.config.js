@@ -5,7 +5,8 @@ import { defineConfig } from 'vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+    base: mode === 'production' ? '/assets/' : '/',
     build: {
         rollupOptions: {
             input: {
@@ -17,4 +18,4 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
     ],
-})
+}))
